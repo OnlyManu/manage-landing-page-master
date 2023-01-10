@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 import Navbar from '../components/navbar/navbar'
+import Hero from '../components/hero/hero'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
 
       <header className={styles.header}>
         <Navbar />
+        <Hero />
       </header>
       <main className={styles.main}>
         
