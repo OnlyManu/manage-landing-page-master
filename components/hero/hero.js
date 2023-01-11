@@ -15,9 +15,9 @@ export default function Hero() {
                 />
             </div>
             <div className={styles.content}>
-                <div className={styles.text}>
-                    <h1 className={styles.heading}>Bring everyone together to build better products.</h1>
-                    <p className={styles.description}>Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.</p>
+                <div className={utils.textBlock}>
+                    <h1 className={utils.headingLg}>Bring everyone together to build better products.</h1>
+                    <p className={utils.textSm}>Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.</p>
                 </div>
                 <button className={utils.btnWithShadow}>Get Started</button>
             </div>

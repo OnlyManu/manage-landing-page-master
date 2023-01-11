@@ -11,3 +11,23 @@
     background-color: var(--color-bright-red);
     color: var(--color-very-light-gray);
 }
+.headingLg {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.headingMd {
+    font-size: 1.98rem;
+    font-weight: 600;
+}
+.textBlock{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+}
+.textSm {
+    font-size: 0.98rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: var(--color-dark-grayish-blue);
+}
