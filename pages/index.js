@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 import Navbar from '../components/navbar/navbar'
 import Hero from '../components/hero/hero'
 import About from '../components/sectionAbout/about'
+import Testimony from '../components/sectionTestimony/testimony'
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       </header>
       <main className={styles.main}>
         <About />
+        <Testimony />
       </main>
 
       <footer className={styles.footer}>
