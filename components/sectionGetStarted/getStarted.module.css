@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 5rem 2.5rem;
+    background-image: url("/images/bg-simplify-section-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: var(--color-bright-red);
+    text-align: center;
+    margin-top: 3rem;
+}

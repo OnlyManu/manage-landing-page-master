@@ -6,6 +6,7 @@ import Navbar from '../components/navbar/navbar'
 import Hero from '../components/hero/hero'
 import About from '../components/sectionAbout/about'
 import Testimony from '../components/sectionTestimony/testimony'
+import GetStarted from '../components/sectionGetStarted/getStarted'
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <main className={styles.main}>
         <About />
         <Testimony />
+        <GetStarted />
       </main>
 
       <footer className={styles.footer}>
