@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import Navlinks from './navlinks/navlinks'
+import Navigation from './navigation/navigation'
 import styles from './navbar.module.css'
 
 export default function Navbar() {
@@ -22,7 +22,7 @@ export default function Navbar() {
                 priority={true}
                 alt=""
             />
-            <Navlinks open={false} />
+            <Navigation open={false} />
         </div>
     )
 }
