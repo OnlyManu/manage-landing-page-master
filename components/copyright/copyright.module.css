@@ -1,0 +1,10 @@
+.container {
+    margin-top: 3rem;
+    text-align: center;
+}
+.copyright {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--color-dark-grayish-blue);
+    opacity: 0.8;
+}

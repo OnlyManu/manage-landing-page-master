@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     font-size: 0.84rem;
+    font-weight: 600;
     height: 2.6rem;
     width: 8rem;
     border: none;
@@ -16,6 +17,7 @@
     justify-content: center;
     align-items: center;
     font-size: 0.84rem;
+    font-weight: 600;
     height: 2.6rem;
     width: 8rem;
     border: none;
@@ -46,4 +48,23 @@
     line-height: 1.5rem;
     font-weight: 400;
     color: var(--color-dark-grayish-blue);
+}
+.navLinksFooter {
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(4, 1fr);
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding: 0 1.5rem;
+    row-gap: 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+}
+.navLinksFooter a{
+    color: var(--color-very-light-gray);
+    font-weight: 400;
+}
+.navLinksHeader {
+    list-style: none;
 }

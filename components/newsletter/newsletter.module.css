@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    gap: 0.5rem;
+    height: 2.6rem;
+}
+.input {
+    height: 100%;
+    border-radius: 1.3rem;
+    background-color: var(--color-very-light-gray);
+    padding: 0 1.3rem;
+    font-size: 0.9rem;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+.btnGo {
+    height: 100%;
+    width: 7rem;
+    font-size: 0.9rem;
+    border-radius: 1.3rem;
+    border: none;
+    background-color: var(--color-bright-red);
+    color: var(--color-very-light-gray);
+}

@@ -11,6 +11,7 @@ export default function Hero() {
                     src="/images/illustration-intro.svg"
                     height={525}
                     width={580}
+                    priority={true}
                     alt=""
                 />
             </div>

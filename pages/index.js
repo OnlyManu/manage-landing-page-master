@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 import Navbar from '../components/navbar/navbar'
@@ -7,6 +6,8 @@ import Hero from '../components/hero/hero'
 import About from '../components/sectionAbout/about'
 import Testimony from '../components/sectionTestimony/testimony'
 import GetStarted from '../components/sectionGetStarted/getStarted'
+import Footer from '../components/sectionFooter/footer'
+
 
 export default function Home() {
   return (
@@ -28,7 +29,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        
+        <Footer />
       </footer>
     </div>
   )
