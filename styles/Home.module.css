@@ -1,8 +1,10 @@
 .container {
+  position: relative;
   background: url("/images/bg-tablet-pattern.svg"), url("/images/bg-tablet-pattern.svg");
   background-size: 100%, 100%;
   background-repeat: no-repeat, no-repeat;
   background-position: 22vw -1.5%, 64vw 16.5%;
+  overflow-x: hidden;
 }
 
 .header {

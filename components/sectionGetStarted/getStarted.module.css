@@ -10,4 +10,5 @@
     background-color: var(--color-bright-red);
     text-align: center;
     margin-top: 3rem;
+    width: 100%;
 }

@@ -1,11 +1,12 @@
 import styles from './navigation.module.css'
+import utils from '../../../styles/utils.module.css'
 import Navlinks from '../../navlinks/navlinks'
 import Link from '../../link/link'
 
-export default function Navigation({open}) {
+export default function Navigation({isOpen}) {
     return (
-        <nav className={styles.container}>
-            <Navlinks>
+        <nav className={isOpen ? styles.container+" "+styles.open : styles.container}>
+            <Navlinks className={utils.navLinksHeader}>
                 <Link>Home</Link>
                 <Link>Pricing</Link>
                 <Link>Products</Link>

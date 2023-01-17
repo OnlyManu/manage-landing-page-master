@@ -9,6 +9,7 @@
   --color-Very-dark-blue: hsl(233, 12%, 13%);
   --color-very-pale-red: hsl(13, 100%, 96%);
   --color-very-light-gray: hsl(0, 0%, 98%);
+  --color-test: #fafafa;
 }
 
 *, *::before, *::after {
@@ -28,4 +29,7 @@ body {
 
 a {
   text-decoration: none;
+}
+.scrollblock {
+  overflow: hidden !important;
 }

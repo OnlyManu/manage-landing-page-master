@@ -2,3 +2,10 @@
     display: flex;
     justify-content: space-between;
 }
+.btnBurger {
+    z-index: 10;
+    cursor: default;
+}
+.btnNavbar {
+    display: none !important;
+}

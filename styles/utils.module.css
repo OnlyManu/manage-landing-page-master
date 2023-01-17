@@ -67,4 +67,18 @@
 }
 .navLinksHeader {
     list-style: none;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 2rem 0;
+    background-color: var(--color-very-light-gray);
+    border-radius: 0.2rem;
+    font-size: 1rem;
+}
+.navLinksHeader a{
+    color: var(--color-dark-blue);
+    font-weight: 600;
 }
