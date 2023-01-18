@@ -22,3 +22,19 @@
     background-color: var(--color-bright-red);
     color: var(--color-very-light-gray);
 }
+
+@media screen and (min-width: 1024px) {
+    .container {
+        grid-area: newsletter;
+        height: 3.2rem;
+    }
+    .input {
+        border-radius: 1.6rem;
+        font-size: 1.1rem;
+    }
+    .btnGo {
+        border-radius: 1.6rem;
+        font-size: 1.1rem;
+        width: 8rem;
+    }
+}

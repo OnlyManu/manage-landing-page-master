@@ -3,3 +3,14 @@
     grid-template-columns: 1fr;
     width: 100%;
 }
+
+@media screen and (min-width: 1024px) {
+    .container {
+        grid-template-columns: auto 1fr 22rem;
+        grid-template-areas: "logo navlinks newsletter"
+                             "sociallinks navlinks copyright";
+        gap: none;
+        column-gap: 8rem;
+        
+    }
+}

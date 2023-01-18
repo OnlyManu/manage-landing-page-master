@@ -37,11 +37,19 @@
     font-size: 1.98rem;
     font-weight: 600;
 }
+.headingWhite {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-very-light-gray);
+}
 .textBlock{
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 0.8rem;
+}
+.alignCenter {
+    text-align: center;
 }
 .textSm {
     font-size: 0.98rem;
@@ -81,4 +89,57 @@
 .navLinksHeader a{
     color: var(--color-dark-blue);
     font-weight: 600;
+}
+
+@media screen and (min-width: 1024px) {
+    .navLinksHeader {
+        background-color: transparent;
+        flex-direction: row;
+        font-size: 0.9rem;
+        padding: 0;
+        gap: 1.4rem;
+    }
+    .textBlock {
+        text-align: left;
+        gap: 2rem;
+    }
+    .headingLg {
+        font-size: 3.8rem;
+    }
+    .headingMd {
+        font-size: 2.5rem;
+    }
+    .headingWhite {
+        font-size: 2.5rem;
+    }
+    .textSm {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+    .textDescription {
+        width: 25.5rem;
+    }
+    .navLinksFooter {
+        grid-area: navlinks;
+        row-gap: 1.5rem;
+        padding: 0;
+        margin: 0;
+        font-size: 1rem;
+    }
+    .btnWithShadow {
+        width: 10rem;
+        height: 3.2rem;
+        border-radius: 1.6rem;
+        font-size: 0.98rem;
+    }
+    .btnWhite {
+        width: 10rem;
+        height: 3.2rem;
+        border-radius: 1.6rem;
+        font-size: 0.98rem;
+    }
+    .logo {
+        height: 2rem;
+        width: auto;
+    }
 }

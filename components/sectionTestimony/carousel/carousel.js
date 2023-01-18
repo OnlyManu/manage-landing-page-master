@@ -91,7 +91,7 @@ export default function CarouselTestimony() {
             let slotContainer2X = 0
             
             if (slotWidth < carouselWidth) {
-                const translation = state.selected % 2 === 0 ? slotWidth - 1 : slotWidth + 0.5
+                const translation = state.selected % 2 === 0 ? slotWidth - 1 : slotWidth + 2
                 slotContainer1X = (state.container1X - translation)
                 slotContainer2X = state.container2X
 

@@ -12,3 +12,14 @@
 .container.open{
     display: flex;
 }
+
+@media screen and (min-width: 1024px) {
+    .container {
+        position: relative;
+        display: flex;
+        background-color: transparent;
+        padding: 0;
+        width: auto;
+        height: auto;
+    }
+}

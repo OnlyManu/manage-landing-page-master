@@ -16,7 +16,7 @@ export default function Navbar() {
     return (
         <div className={styles.container}>
             <Image
-                className={styles.logo} 
+                className={styles.logo+" "+utils.logo} 
                 src="/images/logo.svg"
                 height={24}
                 width={146}

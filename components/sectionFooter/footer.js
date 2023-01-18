@@ -13,12 +13,12 @@ export default function Footer() {
             <Newsletter />
             <Navlinks className={utils.navLinksFooter}>
                 <Link>Home</Link>
-                <Link>Pricing</Link>
-                <Link>Products</Link>
-                <Link>About Us</Link>
                 <Link>Careers</Link>
+                <Link>Pricing</Link>
                 <Link>Community</Link>
+                <Link>Products</Link>
                 <Link>Privacy Policy</Link>
+                <Link>About Us</Link>
             </Navlinks>
             <SocialLinks />
             <Logo />

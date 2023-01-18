@@ -1,6 +1,7 @@
 .container{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .btnBurger {
     z-index: 10;
@@ -8,4 +9,13 @@
 }
 .btnNavbar {
     display: none !important;
+}
+
+@media screen and (min-width: 1024px) {
+    .btnBurger {
+        display: none;
+    }
+    .btnNavbar {
+        display: flex !important;
+    }    
 }

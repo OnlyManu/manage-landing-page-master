@@ -13,3 +13,24 @@
     flex-direction: column;
     gap: 1.5rem;
 }
+
+@media screen and (min-width: 1024px) {
+    .container {
+        display: grid;
+        grid-template-columns: 32rem 1fr;
+        grid-template-areas: "heading differences";
+        padding: 0 8rem;
+        gap: 7rem;
+        margin-top: 0;
+        margin-bottom: 8rem;
+    }
+    .header {
+        width: 32rem;
+        grid-area: heading;
+    }
+    .differenceList {
+        width: 100%;
+        grid-area: differences;
+        gap: 2.5rem;
+    }
+}

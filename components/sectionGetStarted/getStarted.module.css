@@ -12,3 +12,19 @@
     margin-top: 3rem;
     width: 100%;
 }
+
+@media screen and (min-width: 1024px) {
+    .container {
+        padding: 6rem 8rem;
+        background-image: url("/images/bg-simplify-section-desktop.svg");
+        background-size: cover;
+        display: grid;
+        grid-template-columns: 36rem auto;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: none;
+    }
+    .text {
+        text-align: left;
+    }
+}

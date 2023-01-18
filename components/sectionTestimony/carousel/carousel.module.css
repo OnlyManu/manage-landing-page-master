@@ -41,10 +41,15 @@
     top: 0;
     transform: translateX(-50%) translateY(-50%);
 }
+.slotAuthor {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
 .slotTestimony {
     padding: 4rem 1.12rem 0 1.12rem;
     background-color: var(--color-very-light-gray);
     width: 100%;
+    text-align: center !important;
 }
 
 .carouselIndicators {
@@ -64,7 +69,21 @@
 }
 
 @media screen and (min-width: 1024px) {
+    .carouselSlots {
+        height: 20.5rem;
+    }
     .slotContainer {
-        width: calc(40vw - 3rem);
+        width: 42vw;
+        height: 17.5rem;
+    }
+    .slotTestimony {
+        padding: 5rem 1.2rem 0 1.2rem;
+    }
+    .slotPicture {
+        width: 6rem;
+    }
+
+    .carouselIndicators {
+        display: none;
     }
 }

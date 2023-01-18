@@ -22,7 +22,7 @@ export default function About() {
         <section className={styles.container}>
             <div className={utils.textBlock+" "+styles.header}>
                 <h2 className={utils.headingMd}>What’s different about Manage?</h2>
-                <p className={utils.textSm}>Manage provides all the functionality your team needs, without the complexity. Our software is tailor-made for modern digital product teams. </p>
+                <p className={utils.textSm+" "+utils.textDescription}>Manage provides all the functionality your team needs, without the complexity. Our software is tailor-made for modern digital product teams. </p>
             </div>
             <div className={styles.differenceList}>
                 {
