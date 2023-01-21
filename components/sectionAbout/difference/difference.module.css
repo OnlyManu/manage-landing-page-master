@@ -48,7 +48,7 @@
 
 @media screen and (min-width: 768px) {
     .container {
-        gap: 2rem;
+        gap: 1rem;
     }
     .title {
         margin-left: var(--side-space-tablet2);
