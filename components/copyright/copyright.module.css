@@ -9,6 +9,14 @@
     opacity: 0.8;
 }
 
+@media screen and (min-width: 768px) {
+    .container {
+        margin-top: 4rem;
+    }
+    .copyright {
+        font-size: 1.4rem;
+    }
+}
 @media screen and (min-width: 1024px) {
     .container {
         grid-area: copyright;

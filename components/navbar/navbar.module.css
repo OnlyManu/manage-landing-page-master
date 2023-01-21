@@ -11,6 +11,12 @@
     display: none !important;
 }
 
+@media screen and (min-width: 768px) {
+    .burgerIcon {
+        width: 2rem;
+        height: auto;
+    }
+}
 @media screen and (min-width: 1024px) {
     .btnBurger {
         display: none;

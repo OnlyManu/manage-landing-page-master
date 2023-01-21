@@ -7,10 +7,19 @@
     margin-top: 3rem;
     width: 100%;
 }
-
+@media screen and (min-width: 768px) {
+    .container {
+        margin-top: 7rem;
+        padding: 0 var(--side-space-tablet2);
+        gap: 5rem;
+    }
+}
 @media screen and (min-width: 1024px) {
     .container {
         gap: 4rem;
-        padding: 0 0 8rem 0;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-bottom: var(--between-space-desktop);
     }
 }

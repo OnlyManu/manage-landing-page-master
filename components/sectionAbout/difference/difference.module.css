@@ -17,7 +17,7 @@
     left: 4%;
     top: 50%;
     width: 96%;
-    height: 2.4rem;
+    height: 100%;
     background-color: var(--color-very-pale-red);
     transform: translateY(-50%);
 }
@@ -46,9 +46,34 @@
     padding: 0 1rem;
 }
 
+@media screen and (min-width: 768px) {
+    .container {
+        gap: 2rem;
+    }
+    .title {
+        margin-left: var(--side-space-tablet2);
+        padding-left: 8rem;
+        height: 4rem;
+    }
+    .text {
+        font-size: 1.8rem;
+    }
+    .difference {
+        padding: 0 var(--side-space-tablet2);
+    }
+    .badge {
+        height: 4rem;
+        width: 6rem;
+        border-radius: 2rem;
+        font-size: 1.5rem;
+    }
+}
 @media screen and (min-width: 1024px) {
     .badge {
-        font-size: 1rem;
+        width: 4rem;
+        height: 2.4rem;
+        border-radius: 1.2rem;
+        font-size: 1.32vw;
     }
     .title {
         text-align: left;
@@ -59,7 +84,7 @@
         display: none;
     }
     .text {
-        font-size: 1.2rem;
+        font-size: 1.42vw;
     }
     .difference {
         padding-left: 6rem;

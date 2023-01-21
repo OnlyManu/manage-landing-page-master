@@ -13,20 +13,31 @@
     flex-direction: column;
     gap: 1.5rem;
 }
-
+@media screen and (min-width: 768px) {
+    .container {
+        gap: 5rem;
+    }
+    .differenceList {
+        gap: 5rem;
+    }
+    .header {
+        padding: 0 calc(var(--side-space-tablet1) + 3rem);
+    }
+}
 @media screen and (min-width: 1024px) {
     .container {
         display: grid;
-        grid-template-columns: 32rem 1fr;
+        grid-template-columns: 35.55vw 1fr;
         grid-template-areas: "heading differences";
-        padding: 0 8rem;
-        gap: 7rem;
+        padding: 0 var(--side-space-desktop);
+        gap: 8.88vw;
         margin-top: 0;
-        margin-bottom: 8rem;
+        margin-bottom: var(--between-space-desktop);
     }
     .header {
-        width: 32rem;
+        width: 35.55vw;
         grid-area: heading;
+        padding: 0;
     }
     .differenceList {
         width: 100%;

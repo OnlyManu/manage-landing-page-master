@@ -3,6 +3,9 @@
     gap: 0.5rem;
     height: 2.6rem;
 }
+.inputGroup {
+    position: relative;
+}
 .input {
     height: 100%;
     border-radius: 1.3rem;
@@ -13,7 +16,22 @@
     border: none;
     outline: none;
 }
+.input.error {
+    outline: 1px solid #ff6666;
+    color: #ff6666;
+}
+.errorMessage {
+    position: absolute;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #ff6666;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform: translateX(1.3rem) translateY(1.4rem) ;
+}
 .btnGo {
+    position: relative;
     height: 100%;
     width: 7rem;
     font-size: 0.9rem;
@@ -21,8 +39,42 @@
     border: none;
     background-color: var(--color-bright-red);
     color: var(--color-very-light-gray);
+    cursor: pointer;
+}
+.btnGo::before {
+    display: none;
+    z-index: 2;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 1.3rem;
+    background-color: var(--color-very-light-gray);
+    opacity: 0.4;
+}
+.btnGo:hover::before {
+    display: block;
 }
 
+@media screen and (min-width: 768px) {
+    .container {
+        height: 4rem;
+    }
+    .input {
+        border-radius: 2rem;
+        font-size: 1.5rem;
+    }
+    .btnGo {
+        border-radius: 2rem;
+        font-size: 1.5rem;
+        width: 10rem;
+    }
+    .btnGo::before {
+        border-radius: 2rem;
+    }
+}
 @media screen and (min-width: 1024px) {
     .container {
         grid-area: newsletter;
@@ -36,5 +88,8 @@
         border-radius: 1.6rem;
         font-size: 1.1rem;
         width: 8rem;
+    }
+    .btnGo::before {
+        border-radius: 1.6rem;
     }
 }

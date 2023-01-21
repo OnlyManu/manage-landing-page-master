@@ -32,6 +32,20 @@
   padding: 3rem 1.5rem 2rem 1.5rem;
 }
 
+@media screen and (min-width: 768px) {
+  .container {
+    background-size: 100%, 100%;
+    background-position: 22vw -4%, 68vw 16.5%;
+  }
+  .header {
+    padding: 6.14vh var(--side-space-tablet1);
+    gap: 5rem;
+  }
+  .footer {
+    padding: 4rem var(--side-space-tablet1) 3rem var(--side-space-tablet1);
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .container {
     background-size: 54%, 54%;
@@ -39,15 +53,20 @@
     background-position: 56.5vw -7%, -33.5vw 56%;
   }
   .header {
-    height: 100vh;
-    padding: 4rem 8rem 0 8rem;
-    gap: none;
-    justify-content: space-between;
+    padding: 8.14vh var(--side-space-desktop) 0 var(--side-space-desktop);
+    gap: 8vh;
   }
   .main {
-    padding-top: 8rem;
+    padding-top: var(--between-space-desktop);
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   .footer {
-    padding: 5rem 8rem;
+    padding: 5rem var(--side-space-desktop);
+  }
+}
+@media screen and (min-width: 1440px) {
+  .header {
+    gap: 10vh;
   }
 }

@@ -10,7 +10,11 @@
         grid-template-areas: "logo navlinks newsletter"
                              "sociallinks navlinks copyright";
         gap: none;
-        column-gap: 8rem;
-        
+        column-gap: 3.88vw;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .container {
+        column-gap: 8.88vw;
     }
 }

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import styles from './navigation.module.css'
 import utils from '../../../styles/utils.module.css'
 import Navlinks from '../../navlinks/navlinks'
@@ -16,4 +17,8 @@ export default function Navigation({isOpen}) {
             </Navlinks>
         </nav>
     )
+}
+
+Navigation.PropTypes = {
+    isOpen: PropTypes.bool
 }

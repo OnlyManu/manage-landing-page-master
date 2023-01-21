@@ -11,7 +11,18 @@
     width: 100%;
     height: auto;
 }
+.socialIcon:hover path {
+    fill: var(--color-bright-red);
+}
 
+@media screen and (min-width: 768px) {
+    .container {
+        grid-template-columns: repeat(5, 5rem);
+        margin-top: 4rem;
+        justify-content: center;
+        column-gap: 3.5rem;
+    }
+}
 @media screen and (min-width: 1024px) {
     .container {
         grid-template-columns: repeat(5, 2rem);

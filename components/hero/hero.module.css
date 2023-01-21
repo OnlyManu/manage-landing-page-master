@@ -19,23 +19,32 @@
     gap: 2rem;
 }
 
+@media screen and (min-width: 768px) {
+    .illustration {
+        width: 90%;
+        align-self: center;
+    }
+    .content {
+        width: 35rem;
+        gap: 3rem;
+    }
+}
 @media screen and (min-width: 1024px) {
     .container {
         display: grid;
-        grid-template-columns: 32rem 1fr;
+        grid-template-columns: 35.55vw 1fr;
         grid-template-areas: "text illustration";
-        gap: 7rem;
+        gap: 8.88vw;
         margin-bottom: 0;
     }
     .illustration {
+        width: 100%;
         grid-area: illustration;
     }
     .content {
         grid-area: text;
         align-items: flex-start;
-        gap: 3rem;
-    }
-    .description {
-        width: 26rem;
+        width: 100%;
+        gap: 2rem;
     }
 }

@@ -1,4 +1,5 @@
-.btnWithShadow {
+.btnWithShadow, .btnWhite {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,23 +9,33 @@
     width: 8rem;
     border: none;
     border-radius: 1.3rem;
+    cursor: pointer;
+}
+.btnWithShadow {
     box-shadow: 0px 8px 10px var(--color-bright-red-transparent);
     background-color: var(--color-bright-red);
     color: var(--color-very-light-gray);
 }
 .btnWhite {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.84rem;
-    font-weight: 600;
-    height: 2.6rem;
-    width: 8rem;
-    border: none;
-    border-radius: 1.3rem;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     background-color: var(--color-very-light-gray);
     color: var(--color-bright-red);
+}
+.btnWithShadow::before, .btnWhite::before {
+    display: none;
+    z-index: 2;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 1.3rem;
+    background-color: var(--color-very-light-gray);
+    opacity: 0.4;
+}
+.btnWithShadow:hover::before, .btnWhite:hover::before {
+    display: block;
 }
 .headingLg {
     font-size: 2.2rem;
@@ -70,8 +81,11 @@
     width: 100%;
 }
 .navLinksFooter a{
-    color: var(--color-very-light-gray);
+    color: #dad8d8;
     font-weight: 400;
+}
+.navLinksFooter a:hover {
+    color: var(--color-bright-red);
 }
 .navLinksHeader {
     list-style: none;
@@ -90,6 +104,57 @@
     color: var(--color-dark-blue);
     font-weight: 600;
 }
+.navLinksHeader a:hover {
+    opacity: 0.4;
+}
+
+.btnAlertBox {
+    color: var(--color-very-light-gray);
+    background-color: var(--color-bright-red);
+}
+
+@media screen and (min-width: 768px) {
+    .logo {
+        height: auto;
+        width: 30vw;
+    }
+    .textBlock {
+        gap: 2.5rem;
+    }
+    .headingLg {
+        font-size: 3.8rem;
+    }
+    .headingMd {
+        font-size: 3.6rem;
+    }
+    .headingWhite {
+        font-size: 3.6rem;
+    }
+    .textSm {
+        font-size: 1.8rem;
+        line-height: 2rem;
+    }
+    .btnWithShadow, .btnWhite {
+        width: 14rem;
+        height: 3.8rem;
+        border-radius: 1.9rem;
+        font-size: 1.1rem;
+    }
+    .btnWithShadow::before, .btnWhite::before {
+        border-radius: 1.9rem;
+    }
+    .navLinksFooter {
+        margin-top: 4rem;
+        row-gap: 2rem;
+        font-size: 1.4rem;
+        padding: 0 var(--side-space-tablet1);
+    }
+    .navLinksHeader {
+        font-size: 1.5rem;
+        gap: 3rem;
+        padding: 4rem 0;
+    }
+}
 
 @media screen and (min-width: 1024px) {
     .navLinksHeader {
@@ -104,39 +169,36 @@
         gap: 2rem;
     }
     .headingLg {
-        font-size: 3.8rem;
+        font-size: 4.2vw;
     }
     .headingMd {
-        font-size: 2.5rem;
+        font-size: 3vw;
     }
     .headingWhite {
-        font-size: 2.5rem;
+        font-size: 3vw;
     }
     .textSm {
-        font-size: 1.2rem;
+        font-size: 1.32vw;
         line-height: 2rem;
     }
     .textDescription {
-        width: 25.5rem;
+        width: 28.33vw;
     }
     .navLinksFooter {
         grid-area: navlinks;
-        row-gap: 1.5rem;
+        row-gap: 3.42vh;
         padding: 0;
         margin: 0;
         font-size: 1rem;
     }
-    .btnWithShadow {
-        width: 10rem;
-        height: 3.2rem;
-        border-radius: 1.6rem;
-        font-size: 0.98rem;
+    .btnWithShadow, .btnWhite {
+        width: 11.11vw;
+        height: 7vh;
+        border-radius: 3.5vh;
+        font-size: 1.2vw;
     }
-    .btnWhite {
-        width: 10rem;
-        height: 3.2rem;
-        border-radius: 1.6rem;
-        font-size: 0.98rem;
+    .btnWithShadow::before, .btnWhite::before {
+        border-radius: 3.5vh;
     }
     .logo {
         height: 2rem;

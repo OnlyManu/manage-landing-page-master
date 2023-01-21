@@ -1,6 +1,7 @@
 import Image from "next/image"
-import styles from './carousel.module.css'
-import utils from '../../../styles/utils.module.css'
+import PropTypes from "prop-types"
+import styles from "./carousel.module.css"
+import utils from "../../../styles/utils.module.css"
 
 export default function CarouselSlot({ image, author, children }) {
     return (
@@ -18,4 +19,10 @@ export default function CarouselSlot({ image, author, children }) {
             </div>
         </div>
     )
+}
+
+CarouselSlot.PropTypes = {
+    image: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    children: PropTypes.element.isRequired
 }

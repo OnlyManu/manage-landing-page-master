@@ -1,7 +1,5 @@
-import Image from 'next/image'
-import { useState, useRef, useReducer } from 'react'
+import { useRef, useReducer } from 'react'
 import styles from './carousel.module.css'
-import utils from '../../../styles/utils.module.css'
 
 import useLayoutEffect from '../../../lib/useIsomorphicLayout'
 import CarouselSlot from './carouselSlot'
@@ -30,7 +28,7 @@ const testimonies = [
     }
 ]
 
-const initialState = { selected: 1, length: testimonies.length, container1X: 0, container2X: 0, initialisation: false}
+const initialState = { selected: 1, length: testimonies.length, container1X: 0, container2X: 0, containerTranslationX: 0, initialisation: false}
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -40,6 +38,13 @@ const reducer = (state, action) => {
             const initialisation = true
             return {...state, container1X, container2X, initialisation}
         } break
+        case 'container translation': {
+            const containerTranslationX = action.payload.containerX
+            const selected = action.payload.next
+            const container1X = action.payload.x1
+            const container2X = action.payload.x2
+            return {...state, containerTranslationX, selected, container1X, container2X}
+        }break
         case 'next': {
             const selected = action.payload.next
             const container1X = action.payload.x1
@@ -64,21 +69,14 @@ export default function CarouselTestimony() {
         let slotWidth = slotContainer1.current.firstElementChild.offsetWidth + 20
 
         if (!state.initialisation) {
-            console.log(getComputedStyle(slotContainer1.current.firstElementChild).marginRight)
-            let container1X = (slotWidth * state.length) * -1
-            let container2X = slotsWidth + container1X
+            let container1X = slotsWidth * -1
+            let container2X = 0
             
-            console.log("x1 before: " + container1X)
-            console.log("x2 before: "+container2X)
             if (slotWidth < carouselWidth) {
                 const extraspace = parseFloat((carouselWidth - slotWidth + 20) / 2)
-                console.log("width: " + carouselWidth)
-                console.log("slot: "+slotWidth)
+                container2X = 0
                 container1X += extraspace
                 container2X += extraspace
-                console.log(extraspace)
-                console.log("x1 after: " + container1X)
-                console.log("x2 after: "+container2X)
             }
 
             slotContainer1.current.style.left = container1X + "px"
@@ -87,42 +85,45 @@ export default function CarouselTestimony() {
         }
         
         const timerID = setInterval(() => {
+            let translation = 0
+            let containerTranslation = false
             let slotContainer1X = 0
             let slotContainer2X = 0
             
-            if (slotWidth < carouselWidth) {
-                const translation = state.selected % 2 === 0 ? slotWidth - 1 : slotWidth + 2
-                slotContainer1X = (state.container1X - translation)
-                slotContainer2X = state.container2X
+            slotContainer1X = (state.container1X - slotWidth)
+            slotContainer2X = state.container2X
 
-                if (Math.abs(slotContainer1X) > slotsWidth) {
-                    slotContainer1X = slotContainer2X + slotsWidth - slotWidth
-                }
-
-                slotContainer2X -= translation
-                if (Math.abs(slotContainer2X) > slotsWidth) {
-                    slotContainer2X = slotContainer1X + slotsWidth
-                }
-            } else {
-                slotContainer1X = (state.container1X - slotWidth)
-                slotContainer2X = state.container2X
-
-                if (Math.abs(slotContainer1X) > slotsWidth) {
-                    slotContainer1X = slotContainer2X + slotsWidth - slotWidth
-                }
-
-                slotContainer2X -= slotWidth
-                if (Math.abs(slotContainer2X) > slotsWidth) {
-                    slotContainer2X = slotContainer1X + slotsWidth
-                }
+            if (slotContainer1.current.style.visibility === "hidden") {
+                slotContainer1.current.style.visibility = "visible"
             }
-            
+            if (slotContainer2.current.style.visibility === "hidden") {
+                slotContainer2.current.style.visibility = "visible"
+            }
+
+            if (Math.abs(slotContainer1X) > slotsWidth) {
+                containerTranslation = state.containerTranslationX === 0 
+                translation = state.containerTranslationX === 0 ? slotContainer2X + slotsWidth - slotWidth : state.containerTranslationX
+                slotContainer1X = translation
+                slotContainer1.current.style.visibility = "hidden"
+            }
+
+            slotContainer2X -= slotWidth
+            if (Math.abs(slotContainer2X) > slotsWidth) {
+                translation = state.containerTranslationX
+                slotContainer2X = translation
+                slotContainer2.current.style.visibility = "hidden"
+            }
 
             slotContainer1.current.style.left = slotContainer1X + "px" 
             slotContainer2.current.style.left = slotContainer2X + "px"
 
             const selected = state.selected < state.length ? state.selected + 1 : 1
-            dispatch({ type: "next", payload: { next: selected, x1: slotContainer1X, x2: slotContainer2X } })
+            if (containerTranslation) {
+                dispatch({ type: "container translation", payload: { containerX: translation, next: selected, x1: slotContainer1X, x2: slotContainer2X } })
+            } else {
+                dispatch({ type: "next", payload: { next: selected, x1: slotContainer1X, x2: slotContainer2X } })
+            }
+            
         }, 6000)
 
         return function () {
@@ -131,7 +132,6 @@ export default function CarouselTestimony() {
         
     }, [state])
 
-    /*console.log(state)*/
     return (
         <div className={styles.container}>
             <div className={styles.carouselSlots} ref={carousel}>

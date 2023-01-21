@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import styles from './difference.module.css'
 import utils from '../../../styles/utils.module.css'
 
@@ -11,4 +12,10 @@ export default function Difference({title, indice, children}) {
             <p className={utils.textSm+" "+styles.difference}>{ children }</p>
         </div>
     )
+}
+
+Difference.PropTypes = {
+    title: PropTypes.string,
+    indice: PropTypes.number,
+    children: PropTypes.element.isRequired
 }

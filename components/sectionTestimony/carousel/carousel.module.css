@@ -67,7 +67,34 @@
 .indicator.active{
     background-color: var(--color-bright-red);
 }
-
+@media screen and (min-width: 768px) {
+    .container {
+        gap: 2rem;
+    }
+    .carouselSlots {
+        height: 27rem;
+    }
+    .slotContainer {
+        height: 23rem;
+        width: calc(100vw - 12vw);
+    }
+    .slotPicture {
+        width: 7rem;
+    }
+    .slotTestimony {
+        padding: 6rem var(--side-space-tablet2) 0 var(--side-space-tablet2);
+    }
+    .slotAuthor {
+        font-size: 1.4rem;
+    }
+    .carouselIndicators {
+        gap: 0.5rem;
+    }
+    .indicator {
+        height: 1rem;
+        width: 1rem;
+    }
+}
 @media screen and (min-width: 1024px) {
     .carouselSlots {
         height: 20.5rem;
