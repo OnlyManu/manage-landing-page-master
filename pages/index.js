@@ -1,7 +1,7 @@
 import Head from 'next/head'
+import { useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
-import Loader from '../components/loader/loader'
 import Navbar from '../components/navbar/navbar'
 import Hero from '../components/hero/hero'
 import About from '../components/sectionAbout/about'
@@ -11,6 +11,11 @@ import Footer from '../components/sectionFooter/footer'
 
 
 export default function Home() {
+  useEffect(() => {
+    const loader = document.getElementById("loader")
+    loader.style.display = "none"
+  }, [])
+
   return (
     <div className={styles.container}>
       <Head>
@@ -19,12 +24,22 @@ export default function Home() {
         <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
       </Head>
 
-      <Loader />
+      <div className={styles.loader} id="loader">
+          <div className={styles.barContainer}>
+              <div className={styles.bar} style={{"--i": 1}}></div>
+              <div className={styles.bar} style={{"--i": 3}}></div>
+              <div className={styles.bar} style={{"--i": 2}}></div>
+              <div className={styles.bar} style={{"--i": 3}}></div>
+              <div className={styles.bar} style={{ "--i": 1 }}></div>
+          </div>    
+          <div className={styles.message}>Loading...</div>
+      </div>
 
       <header className={styles.header}>
         <Navbar />
         <Hero />
       </header>
+
       <main className={styles.main}>
         <About />
         <Testimony />
