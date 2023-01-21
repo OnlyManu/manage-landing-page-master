@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [github.com/OnlyManu/manage-landing-page-master](https://github.com/OnlyManu/manage-landing-page-master)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [frontendmentor.io/solutions/manage-landing-page-9CSjp2lv8J](https://www.frontendmentor.io/solutions/manage-landing-page-9CSjp2lv8J)
 
 ## My process
 
