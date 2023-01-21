@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types'
 import styles from './carousel.module.css'
 
-export default function CarouselIndicator({ active, indice }) {
+export default function CarouselIndicator({ activeSlotIndice, indice }) {
     return (
-        <div className={active === indice ? styles.indicator+" "+styles.active : styles.indicator}></div>
+        <div className={activeSlotIndice === indice ? styles.indicator+" "+styles.active : styles.indicator}></div>
     )
 }
 
-CarouselIndicator.PropTypes = {
-    active: PropTypes.bool.isRequired,
+CarouselIndicator.propTypes = {
+    activeSlotIndice: PropTypes.number.isRequired,
     indice: PropTypes.number.isRequired
 }

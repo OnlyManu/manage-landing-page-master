@@ -148,7 +148,7 @@ export default function CarouselTestimony() {
             </div>
             <div className={styles.carouselIndicators}>
                 {
-                    testimonies.map((testimony, key) =>  <CarouselIndicator key={key} indice={key + 1} active={state.selected} /> )
+                    testimonies.map((testimony, key) =>  <CarouselIndicator key={key} indice={key + 1} activeSlotIndice={state.selected} /> )
                 }
             </div>
         </div>

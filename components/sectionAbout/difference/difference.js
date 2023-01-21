@@ -14,8 +14,8 @@ export default function Difference({title, indice, children}) {
     )
 }
 
-Difference.PropTypes = {
+Difference.propTypes = {
     title: PropTypes.string,
     indice: PropTypes.number,
-    children: PropTypes.element.isRequired
+    children: PropTypes.string.isRequired
 }

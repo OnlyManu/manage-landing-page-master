@@ -8,8 +8,8 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(20px);
 }
 .alert.open {

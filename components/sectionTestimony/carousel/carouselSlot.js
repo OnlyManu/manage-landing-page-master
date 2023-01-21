@@ -21,8 +21,8 @@ export default function CarouselSlot({ image, author, children }) {
     )
 }
 
-CarouselSlot.PropTypes = {
+CarouselSlot.propTypes = {
     image: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
-    children: PropTypes.element.isRequired
+    children: PropTypes.string.isRequired
 }

@@ -19,6 +19,6 @@ export default function Navigation({isOpen}) {
     )
 }
 
-Navigation.PropTypes = {
+Navigation.propTypes = {
     isOpen: PropTypes.bool
 }

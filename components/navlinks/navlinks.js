@@ -10,7 +10,7 @@ export default function Navlinks({className, children}) {
     )
 }
 
-Navlinks.PropTypes = {
+Navlinks.propTypes = {
     className: PropTypes.string,
-    children: PropTypes.element.isRequired
+    children: PropTypes.arrayOf(PropTypes.element).isRequired
 }

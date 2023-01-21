@@ -37,8 +37,8 @@ export default function AlertBox({ children, isOpen, onClick }) {
     )
 }
 
-alertBox.PropTypes = {
-    children: PropTypes.element.isRequired,
+AlertBox.propTypes = {
+    children: PropTypes.string.isRequired,
     isOpen: PropTypes.bool,
     onClick: PropTypes.func
 }

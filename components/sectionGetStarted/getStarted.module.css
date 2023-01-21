@@ -22,7 +22,7 @@
 }
 @media screen and (min-width: 1024px) {
     .container {
-        padding: 6rem var(--side-space-desktop);
+        padding: 5rem var(--side-space-desktop);
         background-image: url("/images/bg-simplify-section-desktop.svg");
         background-size: cover;
         display: grid;
