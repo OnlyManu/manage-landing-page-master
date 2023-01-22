@@ -28,15 +28,16 @@ const testimonies = [
     }
 ]
 
-const initialState = { selected: 1, length: testimonies.length, container1X: 0, container2X: 0, containerTranslationX: 0, initialisation: false}
+const initialState = { selected: 1, length: testimonies.length, windowWidth: 0, container1X: 0, container2X: 0, containerTranslationX: 0, initialisation: false}
 
 const reducer = (state, action) => {
     switch (action.type) {
         case 'initialisation': {
             const container1X = action.payload.x1
             const container2X = action.payload.x2
+            const windowWidth = action.payload.windowWidth
             const initialisation = true
-            return {...state, container1X, container2X, initialisation}
+            return {...state, windowWidth, container1X, container2X, initialisation}
         } break
         case 'resize': {
             return {...initialState}
@@ -69,12 +70,14 @@ export default function CarouselTestimony() {
     useLayoutEffect(() => {
         const carouselWidth = carousel.current.offsetWidth
         const slotsWidth = slotContainer1.current.offsetWidth
+        const windowWidth = window.innerWidth
         let slotWidth = slotContainer1.current.firstElementChild.offsetWidth + 20
 
         if (!state.initialisation) {
             let container1X = slotsWidth * -1
             let container2X = 0
             
+            console.log(windowWidth)
             if (slotWidth < carouselWidth) {
                 const extraspace = parseFloat((carouselWidth - slotWidth + 20) / 2)
                 container2X = 0
@@ -84,7 +87,7 @@ export default function CarouselTestimony() {
 
             slotContainer1.current.style.left = container1X + "px"
             slotContainer2.current.style.left = container2X + "px"
-            dispatch({ type: "initialisation", payload: { x1: container1X, x2: container2X } })
+            dispatch({ type: "initialisation", payload: {windowWidth, x1: container1X, x2: container2X } })
         }
         
         const timerID = setInterval(() => {
@@ -130,8 +133,11 @@ export default function CarouselTestimony() {
         }, 6000)
 
         window.addEventListener("resize", () => {
-            clearInterval(timerID)
-            dispatch({type: "resize"})
+            const currentWidth = window.innerWidth
+            if (currentWidth !== state.windowWidth) {
+                clearInterval(timerID)
+                dispatch({type: "resize"})
+            }
         }, false)
 
         return function () {
