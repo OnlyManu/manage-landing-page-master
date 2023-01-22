@@ -87,7 +87,7 @@ export default function CarouselTestimony() {
             dispatch({ type: "initialisation", payload: { x1: container1X, x2: container2X } })
         }
         
-        /*const timerID = setInterval(() => {
+        const timerID = setInterval(() => {
             let translation = 0
             let containerTranslation = false
             let slotContainer1X = 0
@@ -136,7 +136,7 @@ export default function CarouselTestimony() {
 
         return function () {
             clearInterval(timerID)
-        }*/
+        }
         
     }, [state])
 
