@@ -12,6 +12,7 @@ export default function CarouselSlot({ image, author, children }) {
                 height={144}
                 width={144}
                 alt={author}
+                priority={true}
             />
             <div className={utils.textBlock + " " + styles.slotTestimony}>
                 <strong className={styles.slotAuthor}>{ author }</strong>
