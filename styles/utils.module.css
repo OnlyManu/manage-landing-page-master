@@ -174,11 +174,11 @@
         font-size: 3vw;
     }
     .textSm {
-        font-size: 1.32vw;
+        font-size: 1.26vw;
         line-height: 2rem;
     }
     .textDescription {
-        width: 28.33vw;
+        width: 27.33vw;
     }
     .navLinksFooter {
         grid-area: navlinks;

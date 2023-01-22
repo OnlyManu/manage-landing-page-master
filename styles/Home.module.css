@@ -51,7 +51,7 @@
   .container {
     background-size: 54%, 54%;
     background-repeat: no-repeat, no-repeat;
-    background-position: 56.5vw -7%, -33.5vw 57%;
+    background-position: 56.5vw -7%, -33.5vw 55%;
   }
   .header {
     padding: 8.14vh var(--side-space-desktop) 0 var(--side-space-desktop);

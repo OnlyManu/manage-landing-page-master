@@ -24,7 +24,8 @@
     .container {
         padding: 5rem var(--side-space-desktop);
         background-image: url("/images/bg-simplify-section-desktop.svg");
-        background-size: cover;
+        background-size: 110%;
+        background-position: 15vw 100%;
         display: grid;
         grid-template-columns: 35.55vw auto;
         justify-content: space-between;
