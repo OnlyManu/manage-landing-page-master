@@ -38,6 +38,9 @@ const reducer = (state, action) => {
             const initialisation = true
             return {...state, container1X, container2X, initialisation}
         } break
+        case 'resize': {
+            return {...initialState}
+        } break
         case 'container translation': {
             const containerTranslationX = action.payload.containerX
             const selected = action.payload.next
@@ -125,6 +128,11 @@ export default function CarouselTestimony() {
             }
             
         }, 6000)
+
+        window.addEventListener("resize", () => {
+            clearInterval(timerID)
+            dispatch({type: "resize"})
+        }, false)
 
         return function () {
             clearInterval(timerID)
