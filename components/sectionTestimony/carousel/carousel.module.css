@@ -22,7 +22,7 @@
     flex-wrap: nowrap;
     width: fit-content;
     padding-top: 2.5rem;
-    transition: left 0.4s;
+    /*transition: left 0.4s;*/
 }
 
 .slotContainer {
