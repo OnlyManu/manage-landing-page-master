@@ -35,12 +35,18 @@ const reducer = (state, action) => {
         case 'initialisation': {
             const container1X = action.payload.x1
             const container2X = action.payload.x2
-            const windowWidth = action.payload.windowWidth
+            const windowWidth = state.windowWidth === 0 ? action.payload.windowWidth : state.windowWidth
             const initialisation = true
             return {...state, windowWidth, container1X, container2X, initialisation}
         } break
         case 'resize': {
-            return {...initialState}
+            const windowWidth = action.payload.windowWidth
+            if (windowWidth === state.windowWidth) {
+                return {...state}
+            } else {
+                return {...initialState, windowWidth}
+            }
+            
         } break
         case 'container translation': {
             const containerTranslationX = action.payload.containerX
@@ -77,7 +83,6 @@ export default function CarouselTestimony() {
             let container1X = slotsWidth * -1
             let container2X = 0
             
-            console.log(windowWidth)
             if (slotWidth < carouselWidth) {
                 const extraspace = parseFloat((carouselWidth - slotWidth + 20) / 2)
                 container2X = 0
@@ -132,13 +137,24 @@ export default function CarouselTestimony() {
             
         }, 6000)
 
-        window.addEventListener("resize", () => {
-            const currentWidth = window.innerWidth
-            if (currentWidth !== state.windowWidth) {
-                clearInterval(timerID)
-                dispatch({type: "resize"})
+        const debounce = (func) => {
+            var timer
+            return function () {
+                if (timer) clearTimeout(timer)
+                timer = setTimeout(func, 50)
             }
-        }, false)
+        }
+
+        const resizeCarousel = () => {
+            const currentWidth = parseInt(window.innerWidth)
+            const oldWidth = parseInt(state.windowWidth)
+            if (oldWidth !== 0 && currentWidth !== oldWidth) {
+                clearInterval(timerID)
+                dispatch({type: "resize", payload: {windowWidth: currentWidth}})
+            }
+        }
+
+        window.addEventListener("resize", debounce(resizeCarousel))
 
         return function () {
             clearInterval(timerID)
