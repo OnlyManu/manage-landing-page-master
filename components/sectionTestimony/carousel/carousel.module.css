@@ -22,6 +22,7 @@
     flex-wrap: nowrap;
     width: fit-content;
     padding-top: 2.5rem;
+    transform: translateX(-14vw);
     transition: left 0.4s;
 }
 

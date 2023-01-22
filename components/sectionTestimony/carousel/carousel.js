@@ -73,7 +73,7 @@ export default function CarouselTestimony() {
     const slotContainer1 = useRef(null)
     const slotContainer2 = useRef(null)
 
-    useLayoutEffect(() => {
+    /*useLayoutEffect(() => {
         const carouselWidth = carousel.current.offsetWidth
         const slotsWidth = slotContainer1.current.offsetWidth
         const windowWidth = window.innerWidth
@@ -160,7 +160,7 @@ export default function CarouselTestimony() {
             clearInterval(timerID)
         }
         
-    }, [state])
+    }, [state])*/
 
     return (
         <div className={styles.container}>
@@ -170,11 +170,11 @@ export default function CarouselTestimony() {
                         testimonies.map((testimony, key) => <CarouselSlot key={key} image={testimony.image} author={testimony.author}>{ testimony.textimony }</CarouselSlot> )
                     }
                 </div>
-                <div className={styles.carouselSlotsContainer+" "+styles.carouselSlotsContainer2} ref={slotContainer2}>
+                {/*<div className={styles.carouselSlotsContainer+" "+styles.carouselSlotsContainer2} ref={slotContainer2}>
                     {
                         testimonies.map((testimony, key) => <CarouselSlot key={key} image={testimony.image} author={testimony.author}>{ testimony.textimony }</CarouselSlot> )
                     }
-                </div>
+                </div>*/}
             </div>
             <div className={styles.carouselIndicators}>
                 {
